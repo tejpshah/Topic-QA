@@ -1,0 +1,211 @@
+[
+  {
+    "Question": "What is the purpose of model editing and intervention in the context of Mechanistic Interpretability?",
+    "Answer": "Model editing and intervention techniques in Mechanistic Interpretability aim to modify the internal components or behavior of a model to better understand its decision-making process and causal mechanisms.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Mechanistic Interpretability",
+      "Model Editing",
+      "Intervention",
+      "Causal Mechanisms"
+    ]
+  },
+  {
+    "Question": "What is the purpose of analyzing neuron activation patterns in neural networks?",
+    "Answer": "Analyzing neuron activation patterns helps to understand how a neural network makes decisions and what features it focuses on. This interpretability technique can provide insights into the internal representations learned by the model.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Interpretability",
+      "Neural Networks",
+      "Activation Patterns"
+    ]
+  },
+  {
+    "Question": "What is the purpose of model editing and intervention techniques in Mechanistic Interpretability?",
+    "Answer": "Model editing and intervention techniques aim to modify or manipulate the internal components or representations of a model to understand how they contribute to the model's predictions or behavior.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Mechanistic Interpretability",
+      "Model Editing",
+      "Intervention",
+      "Interpretability"
+    ]
+  },
+  {
+    "Question": "Explain how analyzing neuron activation patterns can help interpret the behavior of a neural network for image classification tasks. Provide a specific example of how this approach could be used to identify the features or patterns that the network is detecting.",
+    "Answer": "Analyzing neuron activation patterns can reveal the features or patterns that a neural network is detecting for image classification. For example, certain neurons may activate strongly in response to edges, textures, or specific shapes present in the input images. By visualizing the activation patterns of these neurons, researchers can identify the visual features that the network has learned to recognize and associate with different classes.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Mechanistic Interpretability",
+      "Neural Networks",
+      "Computer Vision",
+      "Activation Patterns"
+    ]
+  },
+  {
+    "Question": "Given a pre-trained transformer model with attention mechanisms, how would you design an experiment to determine if the model is attending to the right input features for a specific task? Describe the experimental setup, evaluation metrics, and potential pitfalls.",
+    "Answer": "Design an experiment with carefully curated input data, where the relevant features are known. Mask or perturb different input features and measure the change in model performance and attention patterns. Use metrics like attention weight entropy and attention rollout to evaluate if the model attends to the expected features. Pitfalls: Attention is not always interpretable, and models may use different features than humans.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Attention Mechanisms",
+      "Interpretability",
+      "Experimental Design",
+      "Evaluation Metrics"
+    ]
+  },
+  {
+    "Question": "What is the purpose of model editing and intervention techniques in the context of Mechanistic Interpretability?",
+    "Answer": "Model editing and intervention techniques in Mechanistic Interpretability aim to modify specific components or parameters of a trained model to understand their impact on the model's behavior and predictions. This helps in probing the inner workings of the model and identifying the causal relationships between its components and outputs.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Mechanistic Interpretability",
+      "Model Editing",
+      "Intervention",
+      "Causal Analysis"
+    ]
+  },
+  {
+    "Question": "Consider a neural machine translation model that uses an attention mechanism to translate from English to French. How could you analyze the attention weights to gain insights into the model's behavior and potential weaknesses?",
+    "Answer": "Analyze the attention weights to identify patterns, such as words or phrases that consistently receive high or low attention. This could reveal biases or blindspots in the model's understanding. Additionally, compare attention weights for correct and incorrect translations to identify potential areas for improvement.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Attention Mechanisms",
+      "Machine Translation",
+      "Model Analysis",
+      "Interpretability"
+    ]
+  },
+  {
+    "Question": "What is the purpose of feature visualization techniques in Mechanistic Interpretability?",
+    "Answer": "Feature visualization techniques aim to provide insight into how a model processes input features and what patterns or features it considers important for making predictions. They help interpret the internal representations learned by the model.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Interpretability",
+      "Feature Visualization",
+      "Model Understanding"
+    ]
+  },
+  {
+    "Question": "Explain how the Gradient-weighted Class Activation Mapping (Grad-CAM) technique can be extended to visualize the contribution of individual neurons in a convolutional neural network layer towards the final classification decision. Discuss the advantages and limitations of this approach compared to other feature visualization techniques like Saliency Maps or Guided Backpropagation.",
+    "Answer": "Grad-CAM can be extended to visualize individual neuron contributions by modifying the gradient computation step. Instead of computing gradients with respect to the final convolutional layer, gradients are computed for each neuron in the target layer. This generates a separate heatmap for each neuron, highlighting its importance. Advantages include better localization and understanding neuron behavior. Limitations are increased complexity and potential noise in single-neuron visualizations.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Interpretability",
+      "Visualization",
+      "CNN",
+      "Grad-CAM",
+      "Neuron Visualization"
+    ]
+  },
+  {
+    "Question": "You are working on a language model for text generation, and you want to apply model editing techniques to control the model's behavior. Specifically, you want to modify the model's output distribution to increase the likelihood of generating text that is more positive and uplifting in sentiment. Describe the steps you would take to achieve this using a mechanistic interpretability approach.",
+    "Answer": "1. Analyze the model's internal representations to identify the neurons or components responsible for sentiment-related attributes. 2. Use model intervention techniques (e.g., feature visualization, causal intervention) to modify the activations of the identified neurons or components in a way that shifts the output distribution towards more positive sentiment. 3. Evaluate the edited model's performance on a held-out dataset to ensure the desired sentiment shift has been achieved without significantly degrading other aspects of the model's performance.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Model Editing",
+      "Causal Intervention",
+      "Sentiment Analysis",
+      "Language Modeling"
+    ]
+  },
+  {
+    "Question": "What is the purpose of analyzing neuron activation patterns in a neural network?",
+    "Answer": "Analyzing neuron activation patterns helps understand how a neural network makes decisions by identifying which neurons are responsible for detecting specific features or patterns in the input data.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Interpretability",
+      "Neural Networks",
+      "Activation Patterns"
+    ]
+  },
+  {
+    "Question": "You are working on a natural language processing model that generates text summaries. The model is a large transformer-based architecture trained on a vast corpus of online articles. You want to investigate how the model handles specific topics or entities by editing the internal representations of the model during inference. Describe a step-by-step approach to perform this kind of model editing and intervention, including the potential challenges and limitations.",
+    "Answer": "1. Identify the relevant internal representations (e.g., token embeddings, attention weights) that correspond to the topics or entities of interest. 2. Develop a method to edit or intervene on these representations during inference, such as adding or removing specific tokens or modifying attention weights. 3. Evaluate the impact of the edits on the model's output and behavior. 4. Potential challenges include preserving the model's coherence and grammaticality after edits, and ensuring that the edits have the intended effect without unintended consequences.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Natural Language Processing",
+      "Model Editing",
+      "Intervention",
+      "Transformer Models",
+      "Interpretability"
+    ]
+  },
+  {
+    "Question": "Explain how attention weights in a transformer model can be analyzed to gain insights into the model's decision-making process. Discuss the potential benefits and limitations of this approach.",
+    "Answer": "Attention weights in transformer models can be visualized and analyzed to understand which input tokens the model is focusing on when making predictions. This can provide insights into the model's decision-making process and reveal potential biases or weaknesses. However, attention is not always a reliable proxy for importance, and interpretation can be challenging due to the complex, non-linear nature of these models.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Mechanistic Interpretability",
+      "Attention Mechanisms",
+      "Transformer Models",
+      "Model Analysis"
+    ]
+  },
+  {
+    "Question": "What is the purpose of feature visualization techniques in Mechanistic Interpretability?",
+    "Answer": "Feature visualization techniques aim to provide insight into how a machine learning model uses and combines different input features to make predictions. They help identify which features are important for the model's decision-making process.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Interpretability",
+      "Feature Visualization",
+      "Model Understanding"
+    ]
+  },
+  {
+    "Question": "You are working on a neural network model for image classification. During the training process, you notice that the model is struggling to accurately classify certain types of images. You suspect that the model is relying too heavily on certain features or patterns that may not be relevant or robust for the task. How can you use model editing and intervention techniques to investigate and potentially mitigate this issue?",
+    "Answer": "Use feature visualization techniques to identify the features or patterns the model is relying on for different types of images. Then, use model editing techniques like feature intervention or concept activation vectors to selectively modify or remove the identified features or patterns, and observe the impact on the model's predictions. This can help determine if the model is over-relying on spurious correlations or irrelevant features, and provide insights for improving the model's robustness and generalization.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Model Editing",
+      "Feature Visualization",
+      "Concept Activation Vectors",
+      "Robustness",
+      "Generalization"
+    ]
+  },
+  {
+    "Question": "Explain how saliency maps, a feature visualization technique, can be used to interpret the decision-making process of a convolutional neural network (CNN) for image classification. What are the key steps involved in generating saliency maps, and how can they provide insights into the model's behavior?",
+    "Answer": "Saliency maps highlight the regions of an input image that are most relevant to the CNN's prediction. To generate saliency maps, we compute the gradient of the output class score with respect to the input image pixels. The resulting gradient values indicate the importance of each pixel for the prediction. The key steps are: 1) Forward pass to get the class scores, 2) Backward pass to compute the gradients, 3) Visualize the gradients as a heatmap overlaid on the input image. Saliency maps can reveal the features or patterns the CNN is focusing on, helping interpret its decision-making process.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Interpretability",
+      "FeatureVisualization",
+      "SaliencyMaps",
+      "CNN",
+      "ImageClassification"
+    ]
+  },
+  {
+    "Question": "What is the purpose of analyzing neuron activation patterns in a neural network?",
+    "Answer": "Analyzing neuron activation patterns helps understand how a neural network processes information and makes decisions. It provides insights into the inner workings of the model and can aid in interpreting its behavior.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Interpretability",
+      "Neural Networks",
+      "Activation Patterns"
+    ]
+  },
+  {
+    "Question": "Explain how attention mechanisms in transformer models can be analyzed to gain insights into the model's decision-making process. Provide an example of how attention visualization techniques can be used to interpret the model's behavior on a specific task.",
+    "Answer": "Attention mechanisms in transformer models can be analyzed by visualizing the attention weights, which indicate the relative importance assigned to different input elements for each output element. By inspecting the attention patterns, we can gain insights into the model's decision-making process and understand which input features are most relevant for specific outputs. For example, in machine translation, attention visualization can reveal which words or phrases in the source sentence are most attended to when generating a particular target word, helping to interpret the model's behavior.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Transformer Models",
+      "Attention Mechanisms",
+      "Interpretability",
+      "Visualization"
+    ]
+  },
+  {
+    "Question": "You are a machine learning researcher working on a natural language processing model for text summarization. The model's performance is suboptimal on certain types of texts, such as legal documents and scientific papers. You suspect that the model's internal representations may not be capturing important semantic information from these text domains. How could you use model editing and intervention techniques to diagnose and potentially improve the model's performance on these challenging text types?",
+    "Answer": "Use concept activation vectors to identify the internal representations responsible for capturing domain-specific semantic information. Intervene on these representations by adjusting their values or editing the parameters that influence them. Evaluate the model's performance after the intervention to see if it improves on the targeted text domains.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Natural Language Processing",
+      "Representation Analysis",
+      "Model Editing",
+      "Concept Activation Vectors",
+      "Intervention"
+    ]
+  }
+]

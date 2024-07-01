@@ -1,0 +1,219 @@
+[
+  {
+    "Question": "What command is used to view the remote repositories associated with a local Git repository?",
+    "Answer": "The command 'git remote -v' is used to view the remote repositories associated with a local Git repository.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Remote Repositories"
+    ]
+  },
+  {
+    "Question": "You have a Git repository with multiple branches, and you want to merge two specific commits from different branches into a new branch while preserving the commit history. How would you accomplish this using advanced Git commands?",
+    "Answer": "To merge two specific commits from different branches into a new branch while preserving the commit history, you can use the `git cherry-pick` command. First, create the new branch from the desired starting point (e.g., main branch). Then, use `git cherry-pick <commit-hash>` for each commit you want to merge, specifying the commit hash. This will apply the changes from those commits to the new branch while preserving their original commit messages and authorship.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Advanced Commands",
+      "Cherry-pick",
+      "Merge",
+      "Branches"
+    ]
+  },
+  {
+    "Question": "Explain the purpose and usage of the `git rebase` command, and how it differs from `git merge`. What are the potential risks and best practices associated with rebasing?",
+    "Answer": "The `git rebase` command is used to reapply commits from one branch onto another. Unlike `git merge`, which creates a new merge commit, `git rebase` replays the commits from the current branch onto the target branch, creating a linear history. Rebasing is useful for keeping a clean and organized commit history, but it can be risky as it rewrites the commit history. Best practices include rebasing only on local, non-shared branches, and avoiding rebasing published/shared commits.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Branching",
+      "Rebasing",
+      "Merging"
+    ]
+  },
+  {
+    "Question": "What is the purpose of a remote repository in Git?",
+    "Answer": "A remote repository in Git serves as a central location for sharing and collaborating on a project's codebase. It allows multiple developers to push their local commits to a shared repository, and pull the latest changes from others.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Remote Repository",
+      "Collaboration"
+    ]
+  },
+  {
+    "Question": "Given a Git repository with the following commit history:\n\nA - B - C - D (master)\n     \\    \\\n      E - F (feature)\n\nHow would you merge the 'feature' branch into the 'master' branch while ensuring that the commit history remains linear, and the merge commit is placed at the end of the combined history?",
+    "Answer": "To merge the 'feature' branch into 'master' while ensuring a linear commit history and placing the merge commit at the end, you can use Git's 'rebase' command followed by a fast-forward merge.\n\nFirst, checkout the 'feature' branch and rebase it onto the latest commit of 'master':\n\ngit checkout feature\ngit rebase master\n\nThis will move the 'feature' branch commits to a new base, placing them after the 'master' commits.\n\nNext, checkout the 'master' branch and perform a fast-forward merge:\n\ngit checkout master\ngit merge feature\n\nThis will move the 'master' branch pointer to the latest commit of the rebased 'feature' branch, resulting in a linear commit history with the merge commit at the end.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Git",
+      "Branching",
+      "Merging",
+      "Rebase",
+      "Fast-forward"
+    ]
+  },
+  {
+    "Question": "Given a Git repository with multiple branches, how would you merge a feature branch into the main branch while resolving conflicts, preserving the commit history, and ensuring that the resulting merge commit accurately reflects the changes made in both branches?",
+    "Answer": "1. Checkout the main branch: `git checkout main`\n2. Pull the latest changes: `git pull`\n3. Checkout the feature branch: `git checkout feature-branch`\n4. Rebase the feature branch on top of the main branch: `git rebase main`\n5. Resolve any conflicts that arise during the rebase process.\n6. Checkout the main branch: `git checkout main`\n7. Merge the feature branch into the main branch: `git merge --no-ff feature-branch`\n8. Push the changes to the remote repository: `git push`",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Git",
+      "Branching",
+      "Merging",
+      "Rebasing",
+      "Conflict Resolution"
+    ]
+  },
+  {
+    "Question": "What is a Git branch and how is it created?",
+    "Answer": "A Git branch is a separate line of development that diverges from the main codebase. It allows you to work on new features or bug fixes in isolation without affecting the main codebase. To create a new branch, use the 'git branch <branch-name>' command. Once created, you can switch to the new branch using 'git checkout <branch-name>'.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Git",
+      "Branching",
+      "Version Control"
+    ]
+  },
+  {
+    "Question": "What is the purpose of branching in Git, and how do you create a new branch?",
+    "Answer": "Branching in Git allows you to create a separate line of development from the main codebase. To create a new branch, use the 'git branch' command followed by the desired branch name. For example: 'git branch new-feature'.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Branching"
+    ]
+  },
+  {
+    "Question": "You are working on a project with a team of developers. You have created a new feature branch called 'feature/new-login' from the 'main' branch. After completing your work on the feature branch, you attempt to merge it back into the 'main' branch, but you encounter a merge conflict. Explain the steps you would take to resolve the merge conflict and successfully merge your feature branch into the 'main' branch.",
+    "Answer": "1. Run 'git status' to identify the files with conflicts.\n2. Open each conflicted file and locate the conflict markers (<<<<<<< HEAD, =======, >>>>>>> feature/new-login).\n3. Manually edit the file, keeping the desired changes and removing the conflict markers.\n4. Stage the resolved files using 'git add <file>'.\n5. Commit the resolved merge with 'git commit'.\n6. Push the merged changes to the remote repository.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Branching",
+      "Merging",
+      "Conflict Resolution"
+    ]
+  },
+  {
+    "Question": "You have a Git repository with two branches, 'main' and 'feature'. The 'feature' branch has several commits that are not present in the 'main' branch. How would you merge the 'feature' branch into the 'main' branch while preserving the commit history and avoiding a fast-forward merge?",
+    "Answer": "To merge the 'feature' branch into the 'main' branch while preserving the commit history and avoiding a fast-forward merge, you can use the '--no-ff' (no fast-forward) option. First, switch to the 'main' branch, then run 'git merge --no-ff feature'. This will create a new merge commit that combines the changes from both branches.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Branching",
+      "Merging",
+      "Version Control"
+    ]
+  },
+  {
+    "Question": "How would you rebase a branch onto another branch while preserving the merge commits from the original branch?",
+    "Answer": "To rebase a branch onto another branch while preserving the merge commits, you can use the `--rebase-merges` option with the `git rebase` command. This option ensures that any merge commits on the branch being rebased are recreated instead of being flattened.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Rebase",
+      "Merge Commits",
+      "Version Control"
+    ]
+  },
+  {
+    "Question": "Explain the purpose and usage of the 'git rebase' command. When would you use it, and what are the potential risks or drawbacks of rebasing?",
+    "Answer": "The 'git rebase' command is used to reapply commits from one branch onto another branch. It can help to create a linear and cleaner commit history by moving or combining a sequence of commits to a new base commit. Rebasing is often used to integrate upstream changes into a local branch or to squash multiple commits into a single commit. However, rebasing can cause conflicts and rewrite project history, which can be problematic in shared repositories. It's generally recommended to avoid rebasing on public or shared branches.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Branching",
+      "Rebase",
+      "Advanced"
+    ]
+  },
+  {
+    "Question": "What is the command to add a remote repository to your local Git repository?",
+    "Answer": "The command to add a remote repository to your local Git repository is: `git remote add <remote_name> <remote_url>`",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Remote Repositories"
+    ]
+  },
+  {
+    "Question": "You have a local Git repository and want to share your code with a remote repository hosted on a server. Describe the steps you would take to set up the remote repository and push your local commits to it.",
+    "Answer": "1. Create a new repository on a remote hosting service like GitHub, GitLab, or Bitbucket.\n2. Copy the remote repository URL provided by the hosting service.\n3. In your local repository, run 'git remote add origin <remote_repo_url>' to associate the local repo with the remote repo.\n4. Run 'git push -u origin master' to push your local commits to the remote 'master' branch and set the upstream tracking.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Remote Repositories",
+      "Push",
+      "Collaboration"
+    ]
+  },
+  {
+    "Question": "You have a local Git repository that is tracking changes to a remote repository on a server. During development, you make several commits to your local repository. However, before you can push your changes to the remote repository, the remote repository is updated by another team member with new commits. Explain the steps you would take to resolve this situation and ensure that your local repository is up-to-date with the remote repository while preserving your local commits.",
+    "Answer": "1. Fetch the latest changes from the remote repository using 'git fetch'. 2. Switch to the branch you want to merge with using 'git checkout <branch>'. 3. Merge the fetched changes into your local branch using 'git merge <remote>/<branch>'. 4. Resolve any merge conflicts if they arise. 5. Commit the resolved merge conflicts. 6. Push your local commits to the remote repository using 'git push'.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Remote Repositories",
+      "Merge",
+      "Fetch"
+    ]
+  },
+  {
+    "Question": "What is the purpose of a feature branch in a Git workflow?",
+    "Answer": "A feature branch in a Git workflow is used to isolate the development of a new feature or bug fix from the main codebase. It allows developers to work on their code changes without affecting the main branch until the changes are reviewed and merged.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Branching",
+      "Workflow"
+    ]
+  },
+  {
+    "Question": "You are working on a complex project with multiple developers. The project has a main branch and several feature branches. One of the developers has pushed changes to a feature branch that conflict with changes made to another feature branch. How would you resolve this conflict while ensuring that the main branch remains stable and all changes are properly merged?",
+    "Answer": "1. Checkout the feature branch with conflicts\n2. Fetch and merge the other feature branch\n3. Resolve conflicts manually\n4. Test the merged code\n5. Commit the merged changes\n6. Push the merged feature branch\n7. Create a pull request to merge into main\n8. Review and merge the pull request",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Git",
+      "Branching",
+      "Merging",
+      "Conflict Resolution",
+      "Collaboration"
+    ]
+  },
+  {
+    "Question": "You are working on a large software project with multiple developers. The project has a main branch and several feature branches. One of the feature branches, 'feature-a', has been merged into the main branch, but you later discover that it introduced a critical bug. How would you revert the merge of 'feature-a' from the main branch while preserving the work done on other feature branches?",
+    "Answer": "To revert the merge of 'feature-a' from the main branch while preserving the work done on other feature branches, you can use the 'git revert' command with the merge commit hash. First, switch to the main branch, then run 'git revert <merge-commit-hash>' where <merge-commit-hash> is the hash of the commit that merged 'feature-a' into the main branch. This will create a new commit that undoes the changes introduced by the merge commit.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Git",
+      "Version Control",
+      "Branching",
+      "Merging",
+      "Revert"
+    ]
+  },
+  {
+    "Question": "You are working on a project with multiple developers, and each developer has created their own branch for a specific feature. One of the developers has merged their branch into the main branch, but there are merge conflicts. How would you resolve these merge conflicts?",
+    "Answer": "To resolve merge conflicts, you need to open the files with conflicts in a text editor or a merge tool. Identify the conflicting sections, which are marked with special conflict markers (<<<<<<< and >>>>>>> with the conflicting changes in between). Carefully review the changes from both branches and decide which changes to keep. Remove the conflict markers and make the necessary edits. Once you've resolved all conflicts, add the changes, commit, and push to the remote repository.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Git",
+      "Branching",
+      "Merging",
+      "Conflict Resolution",
+      "Collaboration"
+    ]
+  }
+]

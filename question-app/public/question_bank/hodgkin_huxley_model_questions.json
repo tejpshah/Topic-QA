@@ -1,0 +1,219 @@
+[
+  {
+    "Question": "What is the purpose of fitting model parameters in the Hodgkin-Huxley Model?",
+    "Answer": "The purpose of fitting model parameters in the Hodgkin-Huxley Model is to adjust the values of the model's parameters to match experimental data, allowing for accurate simulations of neuronal activity.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Model Parameters",
+      "Parameter Fitting"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, the membrane potential (Vm) is determined by the sum of individual ionic currents and the capacitive current. Write the equation that describes the relationship between Vm and these currents, and explain the meaning of each term.",
+    "Answer": "The equation is: dVm/dt = -(INa + IK + Il)/Cm, where INa is the sodium current, IK is the potassium current, Il is the leakage current, and Cm is the membrane capacitance. The equation states that the rate of change of membrane potential is proportional to the sum of ionic currents, scaled by the membrane capacitance.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Membrane Potential",
+      "Ionic Currents",
+      "Capacitance"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, the sodium and potassium conductances are described by voltage-dependent gating variables (m, n, h). Derive the differential equations that govern the time evolution of these gating variables, and explain the physical meaning of each term.",
+    "Answer": "The differential equations governing the gating variables are:\n\ndm/dt = \u03b1m(V)(1-m) - \u03b2m(V)m\ndn/dt = \u03b1n(V)(1-n) - \u03b2n(V)n\ndh/dt = \u03b1h(V)(1-h) - \u03b2h(V)h\n\nThe \u03b1 and \u03b2 terms represent the voltage-dependent rate constants for the transitions between the open and closed states of the channel. The (1-x) term accounts for the fraction of channels in the closed state, while the x term accounts for the fraction in the open state.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Ion Channel Dynamics",
+      "Differential Equations",
+      "Voltage-Gated Channels"
+    ]
+  },
+  {
+    "Question": "Given the voltage trace of an action potential recorded from a neuron, describe how you would determine the values of the maximum conductances (gNa and gK) and reversal potentials (ENa and EK) that best fit the experimental data using the Hodgkin-Huxley model. What challenges might you encounter in this process, and how would you address them?",
+    "Answer": "To determine the maximum conductances and reversal potentials from experimental data, I would use a nonlinear optimization algorithm to minimize the difference between the model predictions and the recorded voltage trace. Challenges include accounting for noise in the data, ensuring convergence of the optimization, and dealing with potential parameter trade-offs or non-identifiability. Strategies to address these challenges include adding regularization terms, using multiple optimization runs with different initial guesses, and constraining parameter ranges based on biological plausibility.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Parameter Estimation",
+      "Nonlinear Optimization",
+      "Model Fitting",
+      "Computational Neuroscience"
+    ]
+  },
+  {
+    "Question": "Consider a modified Hodgkin-Huxley model for a neuron with an additional voltage-gated calcium channel. The calcium current (ICa) is described by the following equation: ICa = gCa * m^2 * h * (V - ECa), where gCa is the maximum conductance, m and h are gating variables, V is the membrane potential, and ECa is the calcium reversal potential. If the calcium current is known to have a distinct activation and inactivation phase, propose a set of differential equations that describe the time evolution of the gating variables m and h, ensuring that the model captures the observed calcium current dynamics.",
+    "Answer": "To capture the activation and inactivation phases of the calcium current, the gating variables m and h can be modeled using two differential equations each:\n\nm_inf = alpha_m / (alpha_m + beta_m)\ndm/dt = alpha_m * (1 - m) - beta_m * m\n\nh_inf = alpha_h / (alpha_h + beta_h)\ndh/dt = alpha_h * (1 - h) - beta_h * h\n\nWhere alpha_m, beta_m, alpha_h, and beta_h are voltage-dependent rate constants that determine the steady-state values (m_inf and h_inf) and the time constants of the activation and inactivation processes, respectively.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Membrane Voltage Equations",
+      "Calcium Channels",
+      "Gating Variables",
+      "Differential Equations"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, explain the role of the sodium and potassium conductances in generating the action potential. Describe how the time course and voltage-dependence of these conductances contribute to the different phases of the action potential.",
+    "Answer": "The sodium conductance (gNa) is primarily responsible for the rapid upstroke of the action potential. Its activation is voltage-dependent, rapidly increasing with depolarization. The potassium conductance (gK) helps repolarize the membrane potential during the falling phase and afterhyperpolarization. Its activation is slower than gNa but increases with depolarization.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Action Potential",
+      "Membrane Conductances",
+      "Electrophysiology"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, the membrane potential (V) is governed by a set of differential equations. Write the equation for the change in membrane potential (dV/dt) in terms of the ionic conductances (g_Na, g_K, g_L) and the reversal potentials (E_Na, E_K, E_L).",
+    "Answer": "dV/dt = (1/C) * (-g_Na * (V - E_Na) - g_K * (V - E_K) - g_L * (V - E_L) + I_ext)",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Membrane Potential",
+      "Ionic Conductances",
+      "Reversal Potentials"
+    ]
+  },
+  {
+    "Question": "Suppose you have a neuron with a resting potential of -70 mV and a threshold potential of -55 mV. The peak sodium conductance during an action potential is 120 mS/cm^2, and the peak potassium conductance is 36 mS/cm^2. The sodium reversal potential is +55 mV, and the potassium reversal potential is -72 mV. Calculate the maximum depolarization achieved during the action potential using the Hodgkin-Huxley model.",
+    "Answer": "To calculate the maximum depolarization, we need to find the membrane potential at which the net ionic current is zero (the reversal potential). We can use the Goldman-Hodgkin-Katz equation: V_m = (RT/F) * ln((P_Na*[Na]_o + P_K*[K]_i) / (P_Na*[Na]_i + P_K*[K]_o)), where P_Na and P_K are the peak conductances for sodium and potassium, respectively. Substituting the given values, we get V_m = +39.6 mV, which corresponds to a maximum depolarization of 109.6 mV from the resting potential.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Action Potential",
+      "Membrane Potential",
+      "Ionic Conductances",
+      "Reversal Potential"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, what is the primary driving force behind the generation of an action potential?",
+    "Answer": "The primary driving force behind the generation of an action potential in the Hodgkin-Huxley model is the transient increase in sodium conductance due to the opening of voltage-gated sodium channels.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Neuroscience",
+      "Biophysics",
+      "Electrophysiology",
+      "Ion Channels",
+      "Membrane Potential"
+    ]
+  },
+  {
+    "Question": "Given the Hodgkin-Huxley model equations for the sodium and potassium conductances (gNa and gK), derive an expression for the membrane potential (V) at the peak of the action potential. Explain the key factors that determine the peak value of the action potential.",
+    "Answer": "At the peak of the action potential, the sodium conductance (gNa) is at its maximum value, while the potassium conductance (gK) is still relatively small. The peak membrane potential can be derived by setting the time derivatives of the gating variables (m, h, n) to zero in the Hodgkin-Huxley equations and solving for V. The key factors determining the peak value are the maximum sodium conductance (gNa_max), the sodium and potassium reversal potentials (ENa and EK), and the leak conductance (gL).",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Action Potential",
+      "Membrane Potential",
+      "Conductances",
+      "Gating Variables"
+    ]
+  },
+  {
+    "Question": "What is the equation used to describe the total membrane current in the Hodgkin-Huxley model?",
+    "Answer": "The total membrane current (I) in the Hodgkin-Huxley model is described by the equation: I = gNa(m^3)(h)(V - ENa) + gK(n^4)(V - EK) + gL(V - EL), where gNa, gK, and gL are the conductances for sodium, potassium, and leakage channels, respectively, and ENa, EK, and EL are the corresponding reversal potentials.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Membrane Voltage",
+      "Ionic Currents"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, the membrane potential during an action potential is described by a set of differential equations that govern the dynamics of various ion channels. Derive the expression for the total membrane current density (I_m) in terms of the individual ionic current densities and the capacitive current density. Explain the significance of each term in the equation and how it contributes to the generation and propagation of an action potential.",
+    "Answer": "The total membrane current density (I_m) in the Hodgkin-Huxley model is given by: I_m = C_m * dV/dt + I_Na + I_K + I_L, where C_m is the membrane capacitance, V is the membrane potential, I_Na is the sodium current density, I_K is the potassium current density, and I_L is the leakage current density. The first term represents the capacitive current density, while the remaining terms represent the ionic current densities. The interplay between these currents governs the action potential dynamics.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Action Potential",
+      "Membrane Potential",
+      "Ion Channels",
+      "Differential Equations"
+    ]
+  },
+  {
+    "Question": "Given the Hodgkin-Huxley model equations for the sodium and potassium conductances, derive an expression for the membrane potential at which the net ionic current is zero (the resting potential). Assume that the leak conductance is constant and that the sodium and potassium reversal potentials are known.",
+    "Answer": "1. Write the Hodgkin-Huxley current equation: I_m = g_Na * m^3 * h * (V - E_Na) + g_K * n^4 * (V - E_K) + g_L * (V - E_L)\n2. Set I_m = 0 to find the resting potential.\n3. Rearrange the equation to solve for V.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Membrane Potential",
+      "Ionic Currents",
+      "Resting Potential",
+      "Differential Equations"
+    ]
+  },
+  {
+    "Question": "What is the primary function of the sodium (Na+) channels in the Hodgkin-Huxley model during the generation of an action potential?",
+    "Answer": "The primary function of the sodium (Na+) channels in the Hodgkin-Huxley model is to initiate the rapid depolarization phase of the action potential by allowing an influx of Na+ ions into the cell, which causes the membrane potential to rapidly increase.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Action Potential",
+      "Sodium Channels",
+      "Depolarization"
+    ]
+  },
+  {
+    "Question": "Derive an expression for the membrane potential of a neuron as a function of time, taking into account the Hodgkin-Huxley model for the sodium and potassium ion currents, as well as a leakage current. Assume that the neuron is initially at rest, and then a brief current pulse is applied at time t = 0. Explain the significance of each term in your final equation and discuss how the membrane potential would evolve over time in response to the current pulse.",
+    "Answer": "The membrane potential V(t) is given by the equation: dV/dt = -(INa + IK + IL)/C, where INa and IK are the sodium and potassium ion currents described by the Hodgkin-Huxley model, IL is the leakage current, and C is the membrane capacitance. The solution involves solving a set of nonlinear differential equations for the ion channel gating variables and substituting into the current expressions.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Membrane Potential",
+      "Differential Equations",
+      "Neuroscience",
+      "Biophysics"
+    ]
+  },
+  {
+    "Question": "What is the primary function of ion channels in the Hodgkin-Huxley model?",
+    "Answer": "The primary function of ion channels in the Hodgkin-Huxley model is to regulate the flow of specific ions across the cell membrane, which in turn determines the membrane potential.",
+    "Difficulty": "Easy",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Ion Channels",
+      "Membrane Potential"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, the parameters governing the voltage-gated ion channels are typically obtained through experimental data fitting. However, this process can be challenging due to the nonlinear nature of the model and the potential for overfitting or underfitting. Describe a robust approach to fitting the Hodgkin-Huxley model parameters, including strategies to address these challenges and ensure the reliability of the fitted parameters.",
+    "Answer": "Use global optimization techniques like genetic algorithms or simulated annealing to find the best-fit parameters across the entire parameter space. Incorporate regularization techniques like L1 or L2 regularization to prevent overfitting. Perform cross-validation by splitting the experimental data into training and validation sets to assess the generalizability of the fitted parameters. Analyze the sensitivity of the model outputs to parameter variations to identify critical parameters that require careful fitting.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Parameter Fitting",
+      "Optimization",
+      "Regularization",
+      "Cross-Validation",
+      "Sensitivity Analysis"
+    ]
+  },
+  {
+    "Question": "In the Hodgkin-Huxley model, the membrane potential (V) is determined by the sum of the individual ionic currents and the capacitive current. If the sodium current (INa) and potassium current (IK) are known, write the equation that describes the membrane potential, and explain the role of each term in the equation.",
+    "Answer": "The membrane potential (V) in the Hodgkin-Huxley model is described by the following equation: C * (dV/dt) = -INa - IK - IL, where C is the membrane capacitance, INa is the sodium current, IK is the potassium current, and IL is the leakage current. The term C * (dV/dt) represents the capacitive current, and the negative sign indicates that the ionic currents (INa, IK, IL) are outward currents that tend to decrease the membrane potential.",
+    "Difficulty": "Medium",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Membrane Potential",
+      "Ionic Currents",
+      "Capacitive Current"
+    ]
+  },
+  {
+    "Question": "The Hodgkin-Huxley model is a widely used mathematical model that describes the ionic mechanisms underlying the initiation and propagation of action potentials in neurons. In a recent experiment, you have obtained electrophysiological recordings from a neuron and want to fit the Hodgkin-Huxley model to your data. However, you realize that the standard parameter values used in the model do not accurately capture the dynamics of your experimental data. Describe the steps you would take to optimize the model parameters and improve the fit to your data, considering the potential challenges and limitations of this process.",
+    "Answer": "1. Identify the parameters that need adjustment based on the discrepancies between the model and experimental data. 2. Implement an optimization algorithm (e.g., gradient descent, simulated annealing) to systematically search the parameter space for values that minimize the error between model predictions and experimental data. 3. Ensure identifiability by constraining certain parameters based on prior knowledge or experimental measurements. 4. Validate the optimized model by testing its predictions on a separate dataset or through cross-validation techniques.",
+    "Difficulty": "Hard",
+    "Tags": [
+      "Hodgkin-Huxley Model",
+      "Parameter Optimization",
+      "Model Fitting",
+      "Electrophysiology",
+      "Computational Neuroscience"
+    ]
+  }
+]
