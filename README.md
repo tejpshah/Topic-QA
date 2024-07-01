@@ -4,6 +4,8 @@ Imagine you're a curious learner, a dedicated student, or a professional looking
 
 But TopicQA.AI isn't just about creating questions - it's about supercharging your learning journey. As you dive into your custom-crafted question bank, the intelligent interface adapts to your progress, allowing you to filter questions by difficulty, status, and tags. Struggling with a particularly tricky concept? Submit your open-ended answers and watch as Claude 3.5 provides instant, insightful feedback, explaining complex ideas with clarity and precision. With progress tracking across multiple subjects, you'll visually see your knowledge grow, motivating you to push further. Whether you're preparing for a crucial exam, upskilling for a career change, or simply satisfying your intellectual curiosity, TopicQA.AI turns the daunting task of learning into an engaging, personalized adventure that caters to your unique learning style and goals.
 
+Feedback Form: https://forms.gle/aDeoK5EqPTvgUms28
+
 ## Features
 
 ### Video Demo 
